@@ -1,11 +1,8 @@
 import styles from './Card.module.css'
-import Button from './Button'
 
-const Card = () => {
-  return(
-    <div className={styles.card}>
-      <Button/>
-    </div>
+const Card = (props) => {
+  return (
+    <div className={`${styles.card} ${props.className}`}>{props.children}</div>
   )
 }
 
