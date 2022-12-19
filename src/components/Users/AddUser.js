@@ -2,13 +2,17 @@ import styles from './AddUser.module.css'
 import Card from '../UI/Card'
 import Button from '../UI/Button'
 
-const AddUser = () => {
+const AddUser = (props) => {
+  const addUserHandler = (e) => {
+    e.preventDefault()
+  }
+
   return (
     <Card className={styles.input}>
-      <form>
-        <label>Username</label>
+      <form onSubmit={addUserHandler}>
+        <label htmlFor="username">Username</label>
         <input id="username" type="text" />
-        <label>Age(Year)</label>
+        <label htmlFor="age">Age(Year)</label>
         <input id="age" type="number" />
         <Button type="submit">Add User</Button>
       </form>
